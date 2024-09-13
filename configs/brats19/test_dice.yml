@@ -1,0 +1,20 @@
+_BASE_: "./T1-T2/pix2pix/base_pix2pix.yml"
+
+model:
+  name: diceeval
+  SG:
+    out_channels: 4  # num of classes
+    pretrained: ../csdh_-unet/results/brats19/Flair/best_checkpoint.pytorch  # pretrained model for SG
+
+loaders:
+  dataset_mode: cmsrnii
+  raw_internal_path_in: [t2, ]
+  raw_internal_path_out: [flair, ]
+  test:
+    file_paths: ['./checkpoints/brats19_stylegan3_translation_T2-Flair_slicenum4_sam/evaluate', ]
+    transformer:
+      raw:
+        Normalize:
+          max_value: 1.0
+
+name: 'brats19_stylegan3_translation_T2-Flair_slicenum4_sam'

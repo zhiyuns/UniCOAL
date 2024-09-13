@@ -1,0 +1,8 @@
+_BASE_: "./5_high_lr.yml"
+
+loss:
+  lambda_sam: 100.0
+  lambda_L1: 80.0
+  blur_fade_kimg: 200
+
+name: 'ixi_unicoal_final'

@@ -1,0 +1,10 @@
+_BASE_: "./1_short_latent.yml"
+
+model:
+  G:
+    mapping_kwargs:
+      num_layers: 2
+  D:
+    mapping_kwargs:
+      num_layers: 2
+name: 'ixi_unicoal_allrand_shortlatent_shortmapping'

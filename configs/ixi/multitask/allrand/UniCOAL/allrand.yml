@@ -1,0 +1,38 @@
+_BASE_: "../../base.yml"
+
+model:
+  name: unicoal
+  combine_ab: True
+  G:
+    netG: 'unicoal'
+    img_channels_in: 4
+    c_dim: 3
+    index_dim: 1
+  D:
+    netD: 'comodgan'
+    img_channels: 5
+    c_dim: 3
+    index_dim: 1
+    epilogue_kwargs:
+      mbstd_group_size: 16
+loaders:
+  batch_size: 16
+  thickness: [4,2,1]
+  slice_num: 4
+  raw_internal_path_in: [T1, T2, PD]
+  raw_internal_path_out: [T1, PD, T2]
+  random_modality_in: True
+  random_modality_out: True
+  all_hr: True
+optimizer:
+  lr_G: 0.00125
+  lr_D: 0.001
+scheduler:
+  ema:
+    enabled: True
+    ema_kimgs: 10
+    ramp: None
+loss:
+  blur_init_sigma: 10
+  blur_fade_kimg: 100
+name: 'ixi_unicoal_allrand'

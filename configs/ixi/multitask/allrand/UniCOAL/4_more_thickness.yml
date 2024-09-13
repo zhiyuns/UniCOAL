@@ -1,0 +1,6 @@
+_BASE_: "./3_modulated_encoder.yml"
+
+loaders:
+  thickness: [4,6,2,1]
+
+name: 'ixi_unicoal_allrand_modulatedenc_more_thickness'

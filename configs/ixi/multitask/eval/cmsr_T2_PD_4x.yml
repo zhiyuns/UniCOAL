@@ -1,0 +1,12 @@
+_BASE_: "../allrand/UniCOAL/6_final.yml"
+
+loaders:
+  batch_size: 64
+  thickness: [4,]
+  slice_num: 4
+  all_hr: False
+  raw_internal_path_in: [T2, ]
+  raw_internal_path_out: [T1, PD, T2, ]
+  test:
+    target_modality: 1
+

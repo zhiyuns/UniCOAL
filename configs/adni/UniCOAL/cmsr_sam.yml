@@ -1,0 +1,55 @@
+_BASE_: "../base.yml"
+model:
+  name: unicoal
+  combine_ab: True
+  G:
+    netG: unicoal
+    img_channels_in: 4
+    z_dim: 64
+    c_dim: 1
+    synthesis_kwargs:
+      encoder_kwargs:
+        modulated: True
+        mapping_kwargs:
+          c_dim: 1
+          index_dim: 1
+          embed_features: 64
+          w_dim: 512
+          num_layers: 2
+    mapping_kwargs:
+      num_layers: 2
+  D:
+    netD: comodgan
+    img_channels: 5
+    c_dim: 1
+    index_dim: 1
+    mapping_kwargs:
+      num_layers: 2
+      embed_features: 64
+    epilogue_kwargs:
+      mbstd_group_size: 16
+loaders:
+  all_hr: false
+  slice_num: 4
+  raw_internal_path_in: [flair, ]
+  raw_internal_path_out: [t1, ]
+  label_internal_path: [t1, ]
+  thickness: [5,]
+  batch_size: 16
+eval_seg: False
+sg: False
+optimizer:
+  lr_G: 0.0025
+  lr_D: 0.002
+loss:
+  blur_init_sigma: 10
+  blur_fade_kimg: 100
+  lambda_sam: 100.0
+  lambda_L1: 80.0
+  blur_fade_kimg: 200
+  lambda_consistency: 0.0
+scheduler:
+  n_epochs: 50
+  n_epochs_decay: 50
+  lr_decay_iters: 50
+name: 'adni_unical_cmsr'

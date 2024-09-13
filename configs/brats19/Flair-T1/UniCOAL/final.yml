@@ -1,0 +1,51 @@
+_BASE_: ../base.yml
+loaders:
+  all_hr: true
+  slice_num: 4
+  thickness: [1,]
+  batch_size: 16
+model:
+  D:
+    epilogue_kwargs:
+      mbstd_group_size: 16
+    netD: comodgan
+    img_channels: 5
+    c_dim: 1
+    mapping_kwargs:
+      num_layers: 2
+      embed_features: 64
+  G:
+    netG: unicoal
+    img_channels_in: 4
+    z_dim: 64
+    c_dim: 1
+    synthesis_kwargs:
+      encoder_kwargs:
+        modulated: True
+        mapping_kwargs:
+          c_dim: 1
+          index_dim: 1
+          embed_features: 64
+          w_dim: 512
+          num_layers: 2
+    mapping_kwargs:
+      num_layers: 2
+  combine_ab: true
+  name: unicoal
+optimizer:
+  lr_D: 0.002
+  lr_G: 0.0025
+scheduler:
+  ema:
+    ema_kimgs: 10
+    enabled: true
+    ramp: None
+eval_seg: False
+sg: False
+loss:
+  blur_fade_kimg: 100
+  blur_init_sigma: 10
+  lambda_sam: 100.0
+  lambda_L1: 80.0
+  blur_fade_kimg: 200
+name: brats19_unicoal_translation_Flair-T1

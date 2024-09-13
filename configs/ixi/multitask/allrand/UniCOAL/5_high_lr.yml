@@ -1,0 +1,7 @@
+_BASE_: "./4_more_thickness.yml"
+
+optimizer:
+  lr_G: 0.0025
+  lr_D: 0.002
+
+name: 'ixi_unicoal_allrand_modulatedenc_more_thickness_morelr'

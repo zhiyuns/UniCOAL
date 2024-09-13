@@ -1,0 +1,15 @@
+_BASE_: "./2_short_mapping.yml"
+
+model:
+  G:
+    synthesis_kwargs:
+      encoder_kwargs:
+        modulated: True
+        mapping_kwargs:
+          c_dim: 3
+          index_dim: 1
+          embed_features: 64
+          w_dim: 512
+          num_layers: 2
+
+name: 'ixi_unicoal_allrand_shortlatent_shortmapping_modulatedenc'

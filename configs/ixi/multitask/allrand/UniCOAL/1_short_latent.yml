@@ -1,0 +1,10 @@
+_BASE_: "./allrand.yml"
+
+model:
+  G:
+    z_dim: 64
+  D:
+    mapping_kwargs:
+      embed_features: 64
+
+name: 'ixi_unicoal_allrand_shortlatent'

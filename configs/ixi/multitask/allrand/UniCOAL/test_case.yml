@@ -1,0 +1,19 @@
+_BASE_: "./5_high_lr.yml"
+
+loaders:
+  dataset_mode: cmsreval
+  batch_size: 32
+  serial_batches: False
+  num_threads: 8
+  raw_internal_path_in: [T1, ]
+  raw_internal_path_out: [T1, PD, T2, ]
+  all_hr: True
+  thickness: [7,]
+  out_thickness: 1.0
+  slice_num: 4
+  test:
+    target_modality: 0
+    ori_file_path: ../../data/cmsr_data/test_data/wuyanjian
+    file_paths: ['../../data/cmsr_data/test_data/wuyanjian/3_t1_se_tra_fil_resample.nii.gz',]
+
+name: 'ixi_stylegan3_allrand_modulatedenc_more_thickness_morelr'
