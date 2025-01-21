@@ -1,6 +1,6 @@
 ## Uni-COAL: A Unified Framework for Cross-Modality Synthesis and Super-Resolution of MR Images
 
-**Official PyTroch implementation of our journal paper**<br></sub>
+**Official PyTroch implementation of our paper published in __Expert Systems with Applications__**<br></sub>
 
 <div align="center">
   <img src="./docs/overall.png" width="100%"/>
