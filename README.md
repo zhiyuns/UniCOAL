@@ -80,11 +80,14 @@ address="Cham",
 pages="66--76",
 }
 
-@article{UniCOAL,
-  title={Uni-COAL: A Unified Framework for Cross-Modality Synthesis and Super-Resolution of MR Images},
-  author={Song, Zhiyun and others},
-  journal={arXiv preprint arXiv:2311.08225},
-  year={2023}
+@article{SONG2025126241,
+title = {Uni-COAL: A unified framework for cross-modality synthesis and super-resolution of MR images},
+journal = {Expert Systems with Applications},
+volume = {270},
+pages = {126241},
+year = {2025},
+issn = {0957-4174},
+author = {Zhiyun Song and Zengxin Qi and Xin Wang and Xiangyu Zhao and Zhenrong Shen and Sheng Wang and Manman Fei and Zhe Wang and Di Zang and Dongdong Chen and Linlin Yao and Mengjun Liu and Qian Wang and Xuehai Wu and Lichi Zhang},
 }
 ```
 
